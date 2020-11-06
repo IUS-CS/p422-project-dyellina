@@ -1,0 +1,8 @@
+<p>raffle-container works!</p>
+Contestants:
+<ul>
+    <li *ngFor="let entry of entries" (click)="onSelect(entry)">{{entry.first}}</li>
+</ul>
+<div *ngIf ="!selectedEntry">
+    No Entry Selected. Please click an entry.
+</div>
