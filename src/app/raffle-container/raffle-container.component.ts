@@ -7,16 +7,15 @@ import { ENTRIES } from '../raffleMembers';
   templateUrl: './raffle-container.component.html',
   styleUrls: ['./raffle-container.component.scss']
 })
+
 export class RaffleContainerComponent implements OnInit {
+  constructor() { }
   selectedEntry: Entry;
   entries = ENTRIES;
-  // tslint:disable-next-line:typedef
-  onSelect(entry: Entry ) {
+  model: '';
+  ngOnInit(): void  {
+  }
+  onSelect(entry: Entry ): void {
     this.selectedEntry = entry;
   }
-  constructor() { }
-
-  ngOnInit()  {
   }
-
-}
