@@ -1,11 +1,7 @@
-# P422 Project (REPLACE ME)
+# Raffle Contest
 
-Here, you should put your project proposal. It should be written in english text and describe what you intend to build along with any information necessary. Please use proper markdown formatting. You can find a guide here: [Mastering Markdown](https://guides.github.com/features/mastering-markdown/).
+# Features
 
-Your project should have the following requirements met:
-
-* A server side component written with javascript that stores information in a database
-* A client side component written in Angular
-* At least four different interactive views for the client
-
-You may choose whatever kid of project you like within the ethical guidlines of the university. Commit your propasal to this file and we will discuss your project idea if it needs improvement.
+ - Put a list of people into the website and it will automatically pick a winner when you are finished.
+  - This is great for lazy people who do not want to write people’s names down and pick it out of a hat
+  - You can also use this with our most recent pandemic to pick who will stand in line at the Walmart for 2 hours for one roll of toilet paper and a rotisserie chicken
