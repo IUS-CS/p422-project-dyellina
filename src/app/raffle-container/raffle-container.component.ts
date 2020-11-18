@@ -2,7 +2,8 @@ import {Component, Input, OnInit} from '@angular/core';
 import { Entry } from '../raffleMember';
 import { ENTRIES } from '../raffleMembers';
 import {AppModule} from '../app.module';
-import { FormsModule } from '@angular/forms';
+import { angularMath } from 'angular-ts-math';
+import { FormsModule} from '@angular/forms';
 
 @Component({
   selector: 'app-raffle-container',
@@ -12,19 +13,29 @@ import { FormsModule } from '@angular/forms';
 
 export class RaffleContainerComponent implements OnInit {
   constructor() { }
-  @Input() entry: Entry;
+  nm1 = '';
+  nm2 = '';
+  nm3 = '';
+  nm4 = '';
+  nm5 = '';
+  min = 1;
+  max = 5;
+  num = angularMath.getIntegerRandomRange(this.min, this.max);
+  @Input() name1 = this.nm1;
+  @Input() name2 = this.nm2;
+  @Input() name3 = this.nm3;
+  @Input() name4 = this.nm4;
+  @Input() name5 = this.nm5;
   // selectedEntry: Entry;
   entries = ENTRIES;
   clicked = false;
   counter = 0;
-  submitted = false;
-  entryInfo: Entry;
+  resetbtn = false;
+  entryInfo = [this.nm1, this.nm2, this.nm3, this.nm4, this.nm5];
  ngOnInit(): void  {
-    this.entry = new Entry();
-    this.entryInfo = new Entry();
    }
    onSubmit(): void {
-     // this.add();
+     this.clicked = true;
    }
   add(): void {
    this.clicked = true;
@@ -32,9 +43,16 @@ export class RaffleContainerComponent implements OnInit {
   }
   reset(): void{
    this.clicked = false;
-  }
-  submit(): void {
-   this.submitted = true;
-
+   this.resetbtn = true;
+   this.num = angularMath.getIntegerRandomRange(this.min, this.max);
+   if (this.resetbtn)
+   {
+     this.name1 = '';
+     this.name2 = '';
+     this.name3 = '';
+     this.name4 = '';
+     this.name5 = '';
+   }
+   this.resetbtn = false;
   }
   }

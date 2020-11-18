@@ -1,32 +1,36 @@
 <body>
 <form>
   <div class="form-group">
-    <label for="name"class="namelabel">Name</label>
-    <input type ="name" class="form-control" id="name"  placeholder="Jonny Doe"
-           [(ngModel)]="entry.name" name="name">
-  </div>
-  <div class="form-group">
-    <label for="email"class="emaillabel">Name</label>
-    <input type ="email" class="form-control" id="email"  placeholder="JonnyDoe@hotmail.net"
-           [(ngModel)]="entry.email" name="email">
-  </div>
-  <div class="form-group">
-    <label for="number"class="numberlabel">Name</label>
-    <input type ="number" class="form-control" id="number"  placeholder="812-867-5309"
-           [(ngModel)]="entry.number" name="number">
-  </div>
-  <button type="button" (click)="add()" value="Add"> Add </button>
-  <button type="button" (click)="submit()" value="Submit"> Submit </button>
-  <div *ngIf="clicked">
-    <div>
-      <p>Name: {{entry.name}}<span class="tab"></span> Email: {{entry.email}}<span class="tab"></span>Number: {{entry.number}}</p>
+    <label for="name1"class="name1">Player 1</label>
+    <input type ="text" class="form-control" id="name1"  placeholder="Jonny Doe"
+           [(ngModel)]="name1" name="name1">
+    <label for="name2"class="name2">Player 2</label>
+    <input type ="text" class="form-control" id="name2"  placeholder="Jonny Doe"
+           [(ngModel)]="name2" name="name2">
+    <label for="name3"class="name3">Player 3</label>
+    <input type ="text" class="form-control" id="name3"  placeholder="Jonny Doe"
+           [(ngModel)]="name3">
+    <label for="name4"class="name4">Player 4</label>
+    <input type ="text" class="form-control" id="name4"  placeholder="Jonny Doe"
+           [(ngModel)]="name4">
+    <label for="name5"class="name5">Player 5</label>
+    <input type ="text" class="form-control" id="name5"  placeholder="Jonny Doe"
+           [(ngModel)]="name5">
+    <p>
+      {{num}}
+    </p>
+    <button type="button" (click)="onSubmit()" value="Print"> Generate Winner </button> <span>
+    <button type="reset" (click)="reset()" value="Reset">Reset</button>
+  </span>
+    <div *ngIf="clicked">
+      <div *ngIf="num===1">{{name1}} Wins</div>
+      <div *ngIf="num===2">{{name2}} Wins</div>
+      <div *ngIf="num===3">{{name3}} Wins</div>
+      <div *ngIf="num===4">{{name4}} Wins</div>
+      <div *ngIf="num===5">{{name5}} Wins</div>
     </div>
-    </div>
-  <div *ngIf="submitted">
-      <div *ngFor="let entry of entries">
-        <p>Name: {{entry.name}}<span class="tab"></span> Email: {{entry.email}}<span class="tab"></span>Number: {{entry.number}}</p>
-      </div>
+
+
+
   </div>
 </form>
-</body>
-

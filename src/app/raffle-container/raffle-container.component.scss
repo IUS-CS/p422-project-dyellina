@@ -1,13 +1,34 @@
-.namelabel{
-  width: 50px;
-}
 .form-control{
   width: 250px;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+}
+body {
+  text-align: center;
+}
+form {
+  display: inline-block;
+}
+.form-group{
+  text-align: center;
 }
 .entries{
   width: 1000px;
 }
-.tab{
-  margin-left: 50px;
+.name1{
+  color: blue;
+}
+.name2{
+  color: red;
+}
+.name3{
+  color: yellowgreen;
+}
+.name4{
+  color: green;
+}
+.name5{
+  color: purple;
 }
 
