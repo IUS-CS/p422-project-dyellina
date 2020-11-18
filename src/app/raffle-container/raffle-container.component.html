@@ -1,46 +1,32 @@
-
-
+<body>
 <form>
-<div class="form-group">
-  <label for="nameentry"class="namelabel">Name</label>
-  <input type ="name" class="form-control" id="nameentry"  placeholder="Jonny Doe">
-</div>
   <div class="form-group">
-    <label for="emailentry"class="emaillabel">Name</label>
-    <input type ="email" class="form-control" id="emailentry"  placeholder="JonnyDoe@hotmail.net">
+    <label for="name"class="namelabel">Name</label>
+    <input type ="name" class="form-control" id="name"  placeholder="Jonny Doe"
+           [(ngModel)]="entry.name" name="name">
   </div>
   <div class="form-group">
-    <label for="numberentry"class="numberlabel">Name</label>
-    <input type ="number" class="form-control" id="numberentry"  placeholder="812-867-5309">
+    <label for="email"class="emaillabel">Name</label>
+    <input type ="email" class="form-control" id="email"  placeholder="JonnyDoe@hotmail.net"
+           [(ngModel)]="entry.email" name="email">
+  </div>
+  <div class="form-group">
+    <label for="number"class="numberlabel">Name</label>
+    <input type ="number" class="form-control" id="number"  placeholder="812-867-5309"
+           [(ngModel)]="entry.number" name="number">
+  </div>
+  <button type="button" (click)="add()" value="Add"> Add </button>
+  <button type="button" (click)="submit()" value="Submit"> Submit </button>
+  <div *ngIf="clicked">
+    <div>
+      <p>Name: {{entry.name}}<span class="tab"></span> Email: {{entry.email}}<span class="tab"></span>Number: {{entry.number}}</p>
+    </div>
+    </div>
+  <div *ngIf="submitted">
+      <div *ngFor="let entry of entries">
+        <p>Name: {{entry.name}}<span class="tab"></span> Email: {{entry.email}}<span class="tab"></span>Number: {{entry.number}}</p>
+      </div>
   </div>
 </form>
-<table class="entries table-striped table-bordered">
-<thead class="thead-light">
-<tr>
-  <th scope="'col">Number</th>
-  <th scope="'col">Name</th>
-  <th scope="'col">Email</th>
-  <th scope="'col">Phone</th>
-</tr>
-</thead>
-  <tbody>
-  <tr>
-    <th scope ="row">1</th>
-    <td>Jonny Boy</td>
-    <td>JonnyBoy@hotmail.com</td>
-    <td>812-696-3572</td>
-  </tr>
-  <tr>
-    <th scope="row">2</th>
-    <td>Jack Daniels</td>
-    <td>JackDaniels@hotmail.com</td>
-    <td>502-674-6215</td>
-  </tr>
-  <tr>
-    <th scope="row">3</th>
-    <td>Connie Mayfield</td>
-    <td>ConnieMayfield@hotmail.com</td>
-    <td>502-536-6471</td>
-  </tr>
-  </tbody>
-</table>
+</body>
+
