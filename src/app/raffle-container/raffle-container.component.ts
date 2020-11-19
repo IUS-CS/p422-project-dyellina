@@ -13,38 +13,32 @@ import { FormsModule} from '@angular/forms';
 
 export class RaffleContainerComponent implements OnInit {
   constructor() { }
-  nm1 = '';
-  nm2 = '';
-  nm3 = '';
-  nm4 = '';
-  nm5 = '';
   min = 1;
   max = 5;
+  nm1 = 0;
+  nm2 = 0;
+  nm3 = 0;
+  nm4 = 0;
+  nm5 = 0;
+  wins = [this.nm1, this.nm2, this.nm3, this.nm4, this.nm5 ];
   num = angularMath.getIntegerRandomRange(this.min, this.max);
-  @Input() name1 = this.nm1;
-  @Input() name2 = this.nm2;
-  @Input() name3 = this.nm3;
-  @Input() name4 = this.nm4;
-  @Input() name5 = this.nm5;
-  // selectedEntry: Entry;
-  entries = ENTRIES;
+  @Input() name1: string;
+  @Input() name2: string;
+  @Input() name3: string;
+  @Input() name4: string;
+  @Input() name5: string;
   clicked = false;
-  counter = 0;
   resetbtn = false;
-  entryInfo = [this.nm1, this.nm2, this.nm3, this.nm4, this.nm5];
  ngOnInit(): void  {
    }
    onSubmit(): void {
      this.clicked = true;
+     this.wins[this.num]++;
+     this.num = angularMath.getIntegerRandomRange(this.min, this.max);
    }
-  add(): void {
-   this.clicked = true;
-   this.counter++;
-  }
   reset(): void{
    this.clicked = false;
    this.resetbtn = true;
-   this.num = angularMath.getIntegerRandomRange(this.min, this.max);
    if (this.resetbtn)
    {
      this.name1 = '';
