@@ -1,9 +1,11 @@
 const mongoose = require('mongoose');
 
 const raffleSchema = mongoose.Schema({
-  name: String,
-  email: String,
-  number: String
+  name1: String,
+  name2: String,
+  name3: String,
+  name4: String,
+  name5: String
 });
 
 const Raffle = mongoose.model('Raffle', raffleSchema);

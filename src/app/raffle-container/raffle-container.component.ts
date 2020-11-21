@@ -1,32 +1,32 @@
 import {Component, Input, OnInit} from '@angular/core';
-import { Entry } from '../raffleMember';
+import {Entry, raffleMember} from '../raffleMember';
 import { ENTRIES } from '../raffleMembers';
 import {AppModule} from '../app.module';
 import { angularMath } from 'angular-ts-math';
 import { FormsModule} from '@angular/forms';
+import {Observable} from 'rxjs';
+import {ActivatedRoute, ParamMap} from '@angular/router';
 
 @Component({
   selector: 'app-raffle-container',
   styleUrls: ['./raffle-container.component.scss'],
   templateUrl: './raffle-container.component.html'
 })
-
 export class RaffleContainerComponent implements OnInit {
-  constructor() { }
-  min = 1;
-  max = 5;
+   // entries: Observable<Entry>;
+  constructor(
+     private route: ActivatedRoute
+  ) { }
+  min = 0;
+  max = 4;
   nm1 = 0;
   nm2 = 0;
   nm3 = 0;
   nm4 = 0;
   nm5 = 0;
-  wins = [this.nm1, this.nm2, this.nm3, this.nm4, this.nm5 ];
+  ENTRIES: Entry = {player1 : 'Sexton', player2: 'Doyle', player3: 'Hitttta', player4: 'Finkbine', player5: 'ANON'};
+  wins = [0, 0, 0, 0, 0];
   num = angularMath.getIntegerRandomRange(this.min, this.max);
-  @Input() name1: string;
-  @Input() name2: string;
-  @Input() name3: string;
-  @Input() name4: string;
-  @Input() name5: string;
   clicked = false;
   resetbtn = false;
  ngOnInit(): void  {
@@ -41,11 +41,11 @@ export class RaffleContainerComponent implements OnInit {
    this.resetbtn = true;
    if (this.resetbtn)
    {
-     this.name1 = '';
-     this.name2 = '';
-     this.name3 = '';
-     this.name4 = '';
-     this.name5 = '';
+     this.wins[0] = 0;
+     this.wins[1] = 0;
+     this.wins[2] = 0;
+     this.wins[3] = 0;
+     this.wins[4] = 0;
    }
    this.resetbtn = false;
   }

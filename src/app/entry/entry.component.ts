@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import {Entry} from '../raffleMember';
+import {raffleMember} from '../raffleMember';
 
 @Component({
   selector: 'app-entry',
@@ -7,7 +7,7 @@ import {Entry} from '../raffleMember';
   styleUrls: ['./entry.component.scss']
 })
 export class EntryComponent implements OnInit {
-  @Input() entry: Entry;
+  @Input() entry: raffleMember;
   constructor() { }
 
   ngOnInit(): void {

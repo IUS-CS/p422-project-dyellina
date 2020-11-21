@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 const express = require('express');
 const bodyParser =require('body-parser');
-const routes =require('');
+const routes =require('./routes');
 
 let port =6061;
 
-mongoose.connect('mongodb://localhost:27017/raffle',{useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect('mongodb://localhost:27017/Project',{useNewUrlParser: true, useUnifiedTopology: true});
 
 let app = express();
 
