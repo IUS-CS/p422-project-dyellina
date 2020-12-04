@@ -19,12 +19,7 @@ export class RaffleContainerComponent implements OnInit {
   ) { }
   min = 0;
   max = 4;
-  nm1 = 0;
-  nm2 = 0;
-  nm3 = 0;
-  nm4 = 0;
-  nm5 = 0;
-  ENTRIES: Entry = {player1 : 'Sexton', player2: 'Doyle', player3: 'Hitttta', player4: 'Finkbine', player5: 'ANON'};
+  ENTRIES: Entry = {player1 : 'Sexton', player2: 'Doyle', player3: 'Hitttta', player4: 'Finkbine', player5: 'Song'};
   wins = [0, 0, 0, 0, 0];
   num = angularMath.getIntegerRandomRange(this.min, this.max);
   clicked = false;
@@ -32,9 +27,9 @@ export class RaffleContainerComponent implements OnInit {
  ngOnInit(): void  {
    }
    onSubmit(): void {
+     this.num = angularMath.getIntegerRandomRange(this.min, this.max);
      this.clicked = true;
      this.wins[this.num]++;
-     this.num = angularMath.getIntegerRandomRange(this.min, this.max);
    }
   reset(): void{
    this.clicked = false;

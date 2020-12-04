@@ -1,32 +1,35 @@
-<body>
+<body class="form">
 <form>
   <div class="form-group">
     <label class="name1">Player 1: {{ENTRIES.player1}}</label>
-    <div>Wins: {{wins[0]}}</div>
+    <div class="gentxt">Wins: {{wins[0]}}</div>
+    <p></p>
     <label class="name2">Player 2: {{ENTRIES.player2}}</label>
-    <div>Wins: {{wins[1]}}</div>
+    <div class="gentxt">Wins: {{wins[1]}}</div>
+    <p></p>
     <label class="name3">Player 3: {{ENTRIES.player3}}</label>
-    <div>Wins: {{wins[2]}}</div>
+    <div class="gentxt">Wins: {{wins[2]}}</div>
+    <p></p>
     <label class="name4">Player 4: {{ENTRIES.player4}}</label>
-    <div>Wins: {{wins[3]}}</div>
+    <div class="gentxt">Wins: {{wins[3]}}</div>
+    <p></p>
     <label class="name5">Player 5: {{ENTRIES.player5}}</label>
-    <div>Wins: {{wins[4]}}</div>
+    <div class="gentxt">Wins: {{wins[4]}}</div>
+    <p></p>
 
-    <p>
-      {{num}}
-    </p>
-    <button type="button" (click)="onSubmit()" value="Print"> Generate Winner </button> <span>
-    <button type="reset" (click)="reset()" value="Reset">Reset</button>
-  </span>
-    <div *ngIf="clicked">
-      <div *ngIf="num===0">{{ENTRIES.player1}} Wins</div>
-      <div *ngIf="num===1">{{ENTRIES.player2}} Wins</div>
-      <div *ngIf="num===2">{{ENTRIES.player3}} Wins</div>
-      <div *ngIf="num===3">{{ENTRIES.player4}} Wins</div>
-      <div *ngIf="num===4">{{ENTRIES.player5}} Wins</div>
+    <button type="button" class="getWinner" (click)="onSubmit()" value="Print"> Generate Winner </button> <span>
+    <button type="reset" class="reset" (click)="reset()" value="Reset">Reset</button>  <div *ngIf="clicked">
+      <div class="gentxt" *ngIf="num===0">{{ENTRIES.player1}} Wins</div>
+      <div class="gentxt" *ngIf="num===1">{{ENTRIES.player2}} Wins</div>
+      <div class="gentxt" *ngIf="num===2">{{ENTRIES.player3}} Wins</div>
+      <div class="gentxt" *ngIf="num===3">{{ENTRIES.player4}} Wins</div>
+      <div class="gentxt" *ngIf="num===4">{{ENTRIES.player5}} Wins</div>
     </div>
+    </span>
+
 
 
 
   </div>
+
 </form>

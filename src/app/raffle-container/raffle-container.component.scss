@@ -18,17 +18,42 @@ form {
 }
 .name1{
   color: blue;
+  font-family: fantasy;
 }
 .name2{
   color: red;
+  font-family: fantasy;
 }
 .name3{
   color: yellowgreen;
+  font-family: fantasy;
 }
 .name4{
   color: green;
+  font-family: fantasy;
+
 }
 .name5{
   color: purple;
+  font-family: fantasy;
+}
+.getWinner{
+background-color: darkgreen;
+  font-weight: bold;
+}
+.reset{
+  background-color:red;
+  font-weight: bold;
+}
+.form{
+
+  padding: 50px;
+  text-align: center;
+  background: darkred;
+  font-size: 35px;
+}
+.gentxt{
+  font-weight: bolder;
+  color: black;
 }
 
