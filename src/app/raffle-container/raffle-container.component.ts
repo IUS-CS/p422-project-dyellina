@@ -1,11 +1,8 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {Entry, raffleMember} from '../raffleMember';
-import { ENTRIES } from '../raffleMembers';
-import {AppModule} from '../app.module';
+// FINAL
+import {Component, OnInit} from '@angular/core';
+import {Entry} from '../raffleMember';
 import { angularMath } from 'angular-ts-math';
-import { FormsModule} from '@angular/forms';
-import {Observable} from 'rxjs';
-import {ActivatedRoute, ParamMap} from '@angular/router';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-raffle-container',
@@ -13,7 +10,6 @@ import {ActivatedRoute, ParamMap} from '@angular/router';
   templateUrl: './raffle-container.component.html'
 })
 export class RaffleContainerComponent implements OnInit {
-   // entries: Observable<Entry>;
   constructor(
      private route: ActivatedRoute
   ) { }
